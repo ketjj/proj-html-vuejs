@@ -1,5 +1,7 @@
 <template>
-  <div>Main</div>
+  <div>
+    <div class="container">Main</div>
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '../assets/style/mixin';
+@import '../assets/style/utilities';
+@import '../assets/style/vars';
 
 </style>
