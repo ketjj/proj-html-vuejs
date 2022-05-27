@@ -1,0 +1,38 @@
+@import 'vars';
+
+
+.header{
+  min-height: 100px;
+  position: absolute!important;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-image: none;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  //color:black;
+  padding: 3em 5em;
+  img{
+    width: 200px;
+  }
+  .nav ul{
+   display: flex;
+   margin: 0;
+   li{
+     text-transform: uppercase;
+     margin-right: 1.5rem;
+     font-size: 14px;
+     a{
+       color:$white;
+       &:hover{
+         color:$chestNut-lighterred;
+       }
+       &:active{
+        color:lighten($irishCoffee, 10%);
+       }
+     }
+   }
+  }
+  
+}

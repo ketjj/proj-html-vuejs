@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="container">Main</div>
+    <div class="k_container">
+      <div class="container-fluid">
+      Main
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,8 +15,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/mixin';
-@import '../assets/style/utilities';
 @import '../assets/style/vars';
 
 </style>

@@ -1,5 +1,11 @@
 <template>
-  <div>Footer</div>
+    <div>
+    <div class="k_container">
+      <div class="container-fluid">
+      Footer
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
