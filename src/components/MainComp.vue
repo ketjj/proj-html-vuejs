@@ -15,31 +15,21 @@
 
     <div class="lower">
       <div class="k_container text-center container-fluid">
-        <div class="input-section row row-cols-2">
-          <div class="col">
+
+        <div class="d-flex">
+
+          <!-- IMAGE SIDE -->
+
+          <div class="col-image">
             <img src="../assets/img/home_img-compressor-400x222.jpg" alt="">
           </div>
 
-          <div class="input-section col">
-            <h5>Sing Up For A Free Training Sessions</h5>
-           
-              <form>
-                <div class="k_form">
-                  <label for="exampleInputPassword1">Name:</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
-                </div>
-
-
-                <div class="k_form text-left">
-                  <label for="exampleInputEmail1">Email </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                </div>
-
-                <button type="submit" class="btn btn-primary k_button">Start now!</button>
-
-              </form>
+          <!-- FORM SIDE -->
+          <div class="submit">
+            <SignUpComp/>
           </div>
+
+          
         </div>     
       </div>
     </div>
@@ -48,11 +38,18 @@
 
 <script>
 import SectionTitle from '@/components/SectionTitle'
+import SignUpComp from '@/components/SignUpComp'
+
+
 export default {
  name: 'MainComp',
- components:{ SectionTitle }
+ components:{ SectionTitle, SignUpComp },
+
 }
 </script>
+
+
+
 
 <style lang="scss" scoped>
 @import '../assets/style/vars';
@@ -74,39 +71,17 @@ export default {
   height:500px;
   background-color: $secondaryShark-color;
   padding: 90px 0 50px 0;
-  .input-section div{
-    float:left;
-    clear:both;
-    h5{
-      float:left;
-      margin-bottom:10px;
+  .col-image{
+    flex-basis:50%;
+    padding:15px;
+    img{
+      width:100%;
     }
   }
-  label{
-    float:left;
-    margin-bottom: 5px;
-    color: $edward-light;
+  .submit{
+    flex-basis:50%;
   }
-  input{
-    margin-bottom:20px;
-    border-radius: 0;
-    background-color:$secondaryShark-color;
-    border: .5px solid $doveGray-dark;
-    color: white;
-  }
-  .k_form{
-    width: 425px;
-  }
-  .k_button{
-    width:98%;
-    float:left;
-    text-transform:uppercase;
-    margin-top: 15px;
-    background-color:$chestNut-darkred;
-    border-color:$chestNut-darkred;
-    padding: 10px 0;
-  }
-
 }
+
 
 </style>
