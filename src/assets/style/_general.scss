@@ -4,6 +4,7 @@
 body{
   font-family: 'Montserrat', sans-serif;
   color:white;
+  scroll-behavior: smooth;
 }
 .k_container{
   width: 65%;
@@ -31,6 +32,6 @@ ul a{
 
 @media (max-width: 992px) {
   .k_container {
-    width: 80%;
+    width: 83%;
   }
 }

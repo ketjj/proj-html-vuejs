@@ -1,7 +1,7 @@
 <template>
   <div id="benefits">
     <div class="k_container container-fluid">
-      <div class="row row-cols-1 row-cols-sm-2">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
         
         <div v-for="(benefit,index) in BenefitsList" :key="index" class="col text-center">
           <i :class="`fa-solid ${benefit.icon}`"></i> 
