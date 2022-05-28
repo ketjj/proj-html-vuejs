@@ -1,21 +1,23 @@
 <template>
   <div class="main">
 
-    <!-- UPPER MAIN -->
     <div class="upper">
       <div class="k_container text-center container-fluid">
-        <!-- INSERIRE IL SECTION TITLE -->
-          <SectionTitle/>
 
-          <p>At Avada Gym, everything we do from top to bottom is the hightest quality to ensure we're equipped <br> to help you to reach your goals of a healthy and fit lifestyle.</p>
-  
+        <!-- INSERIRE IL SECTION TITLE -->
+        <div id="title">
+          <div class="section-title">World  class  fitness</div>
+          <img src="../assets/img/divider-xx-red.png" alt="">
+        </div>
+        <p>At Avada Gym, everything we do from top to bottom is the hightest quality to ensure we're equipped <br> to help you to reach your goals of a healthy and fit lifestyle.</p>
       </div>
+
       <img src="../assets/img/background-line.png" alt="background-line">
+
     </div>
 
     <div class="lower">
       <div class="k_container text-center container-fluid">
-
         <div class="d-flex">
 
           <!-- IMAGE SIDE -->
@@ -27,23 +29,33 @@
           <!-- FORM SIDE -->
           <div class="submit">
             <SignUpComp/>
-          </div>
-
-          
+          </div>         
         </div>     
       </div>
     </div>
+  
+
+      <!-- SECTION BENEFITS -->
+    <SectionBenefits/>
+      <!-- SECTION RESULTS AND FACILITIES -->
+    <SectionResultsFacility/>
+
   </div>
 </template>
 
 <script>
-import SectionTitle from '@/components/SectionTitle'
 import SignUpComp from '@/components/SignUpComp'
+import SectionBenefits from '@/components/SectionBenefits'
+import SectionResultsFacility from '@/components/SectionResultsFacility'
 
 
 export default {
  name: 'MainComp',
- components:{ SectionTitle, SignUpComp },
+ components:{  
+   SignUpComp,
+   SectionBenefits,
+   SectionResultsFacility
+  }
 
 }
 </script>
@@ -54,9 +66,22 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/vars';
 
+
+// UPPER
 .upper{
   min-height:300px;
   background-color: $primaryShark-color;
+  .section-title{
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight:600;
+  word-spacing: 5px;
+  padding-top: 4em;
+  }
+  #title img{
+   margin: 30px 0;
+   width: 30px;
+  }
   img{
     width: 100%;
     background-color: $secondaryShark-color;
@@ -67,8 +92,11 @@ export default {
     margin-bottom: 30px;
   }
 }
+
+
+// LOWER
 .lower{
-  height:500px;
+  height:520px;
   background-color: $secondaryShark-color;
   padding: 90px 0 50px 0;
   .col-image{
@@ -83,5 +111,7 @@ export default {
   }
 }
 
+
+// BENEFITS
 
 </style>

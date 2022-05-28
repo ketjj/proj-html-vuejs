@@ -121,7 +121,7 @@ export default {
     }
   }
   .fa-asterisk{
-    font-size:20px;
+    font-size: 15px;
     font-family:none;
     color:$chestNut-darkred;
   }
@@ -135,7 +135,7 @@ export default {
     padding: 10px 0;
   }
 
-}
+  }
   .sub-success{
     font-size: 24px;
     color: lighten($yellow, 60%);
@@ -143,5 +143,26 @@ export default {
     text-transform: uppercase;
     padding-top: 6rem;
   }
+
+  @media (max-width: 992px) {
+  .header{
+    padding: 3em 3em;
+  }
+  .header img {
+    width: 120px;
+  }
+  .header ul li{
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header img {
+    width: 100px;
+  }
+  .nav{
+   display:none;
+  }
+}
 
 </style>

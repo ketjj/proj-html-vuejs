@@ -7,9 +7,10 @@
 
     <div class="nav">
       <ul>
-        <li v-for="(navlin,index) in NavLinkList" :key="index"><a href="#" class="">{{navlin.name}}</a></li>
+        <li v-for="(navlink,index) in NavLinkList" :key="index"><a :href="navlink.id" class="">{{navlink.name}}</a></li>
         <!-- :class="{'active': navlin.isActive}" -->
       </ul>
+      <i class="fa-solid fa-bars"></i>
     </div>
   </div>
 
