@@ -15,6 +15,7 @@ export default [
   {
     name: 'facilities',
     link: '#',
+    id: 'benefits',
     select: true,
     dropdown: ''
   },

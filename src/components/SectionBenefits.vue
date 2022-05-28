@@ -1,7 +1,7 @@
 <template>
   <div id="benefits">
     <div class="k_container container-fluid">
-      <div class="row row-cols-sm-2 row-cols-lg-4">
+      <div class="row row-cols-1 row-cols-sm-2">
         
         <div v-for="(benefit,index) in BenefitsList" :key="index" class="col text-center">
           <i :class="`fa-solid ${benefit.icon}`"></i> 
@@ -40,12 +40,18 @@ export default {
   background-size: cover;
   display: flex;
   align-items: center;
-}
+  }
   .k_container{
-    .col{
-      max-height: 300px;
-      margin: 40px 0;
-    }
+  .col{
+    max-height: 300px;
+    margin: 40px 0;
+  }
+  i:hover{
+    cursor: pointer;
+    transform: scale(1.2);  
+  } 
+  }
+
   .fa-solid{
     font-size: 30px;
     display: inline-block;
@@ -65,7 +71,7 @@ export default {
     max-height:200px;
     overflow: auto;
   }
-  }
+  
 
 
 </style>
