@@ -33,8 +33,18 @@
     </div>
     <!-- //FACILITIESd -->
 
+
+    <!-- BANNER -->
+
     <div class="motivate-banner">
-      <div class="overlay"></div>
+      <div class="overlay">
+        <div class="k_container">
+          <h3>" I fear not the man who has practiced 10,00 <br> kicks once, but I fear the man who has <br> practiced one kick 10,000 times "</h3>
+          <img src="../assets/img/divider-white-xx.png" alt="">
+          <div class="author">bruce lee - Quote of the day
+            </div>
+        </div>
+      </div>
 
     </div>
 
@@ -67,7 +77,6 @@ export default {
 .total{
   //min-height:800px;
   background-color: $primaryShark-color;
-  padding-bottom:8em;
   .section-title{
   text-transform: uppercase;
   font-size: 24px;
@@ -117,6 +126,10 @@ export default {
   .image-f{
     //height: 300px;
     margin-bottom: 30px;
+    &:hover{
+      transform: scale(1.5);
+      transform: translate(0, 20px);
+    }
     img{
     width:100%;
 
@@ -124,16 +137,55 @@ export default {
   }
   #lower-sec{
     margin-bottom: 8em;
+    img{
+      &:hover{
+        filter: brightness(200%);
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+      }
+
+    }
   }
 }
 .motivate-banner{
+  position: relative;
   width:100%;
   height:500px;
   background-image: url('../assets/img/home-testimonial-bg.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: local;
-  opacity: .8;
+  //opacity: .8;
+  .overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba($color: #000000, $alpha: .1);
+    &:hover{
+      background-color: rgba($color: #000000, $alpha: .4);
+      transition: all 2s ease;
+    }
+    h3{
+      margin-top:120px;
+      word-spacing: 2px;
+      line-height: 40px;
+    }
+    img{
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    .author{
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    i{
+      font-size: 5px;
+      line-height: 14px;
+    }
+    }
 }
 
 </style>
