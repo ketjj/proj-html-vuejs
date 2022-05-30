@@ -37,8 +37,17 @@
 
       <!-- SECTION BENEFITS -->
     <SectionBenefits/>
+    
       <!-- SECTION RESULTS AND FACILITIES -->
+
     <SectionResultsFacility/>
+
+    <!-- SECTION TRAINERS -->
+
+    <SectionTrainers/>
+
+    <!-- SECTION ARTICLES -->
+    <SectionArticles/>
 
   </div>
 </template>
@@ -47,6 +56,8 @@
 import SignUpComp from '@/components/SignUpComp'
 import SectionBenefits from '@/components/SectionBenefits'
 import SectionResultsFacility from '@/components/SectionResultsFacility'
+import SectionTrainers from '@/components/SectionTrainers'
+import SectionArticles from '@/components/SectionArticles'
 
 
 export default {
@@ -54,7 +65,9 @@ export default {
  components:{  
    SignUpComp,
    SectionBenefits,
-   SectionResultsFacility
+   SectionResultsFacility,
+   SectionTrainers,
+   SectionArticles
   }
 
 }
