@@ -9,7 +9,7 @@
       <div class="trainers-section">
         <div v-for="(trainer,index) in TrainersList" :key="`tr-${index}`" class="trainer-card">
           <div class="image">
-             <img :src="require(`../assets/img/${trainer.image}`)" :alt="trainer.name">
+             <img onclick="show()" :src="require(`../assets/img/${trainer.image}`)" :alt="trainer.name">
           </div>
           <div class="hidden-part">
             <div class="info d-flex flex-column justify-content-between">
@@ -26,7 +26,7 @@
 
 
         <div v-if="isVisible" class="d-flex justify-content-between">
-          <div v-for="(trainer,index) in moreTrainers" :key="`alltrainers-${index}`" class="trainer-card">
+          <div v-for="(trainer,index) in MoreTrainersList" :key="`alltrainers-${index}`" class="trainer-card">
           <div class="image">
              <img :src="require(`../assets/img/${trainer.image}`)" :alt="trainer.name">
           </div>
@@ -53,7 +53,7 @@
 <script>
 import SocialIcons from '@/components/SocialIcons'
 import ButtonCompCopy from '@/components/ButtonCompCopy'
-import TrainersList from '@/data/TrainersList'
+import MoreTrainersList from '@/data/MoreTrainersList'
 
 export default {
  name: 'SectionTrainers',
@@ -61,33 +61,37 @@ export default {
    SocialIcons,
    ButtonCompCopy
  },
+ methods:{
+ 
+ },
+
  data(){
   return{
-  TrainersList: TrainersList,
+  MoreTrainersList: MoreTrainersList,
   isVisible: false,
 
-  moreTrainers:[
-      {
-        image: 'trainer-photo4.webp',
-        id: '4',
-        name: 'Bruce Johnson',
-        position: 'Personal Trainer',
-        about: ' I am a certified Personal Trainer who is extremely passionate about fitness and    health'
-        },
-      {
-        image: 'trainer-photo5.webp',
-        id: '5',
-        name: 'Derek Lee',
-        position: 'Coach',
-        about: 'My name is Javon Woods and Im a certified TEAM USA boxing coach andownerof a    certification with the National Academy of Sports Medicine'
-      },
-      {
-        image: 'trainer-photo6.webp',
-        id: '6',
-        name: 'Sasha Smith',
-        position: 'Coach',
-        about: 'With 10 years of experience I know what it takes to help clients of all shapes and    sizes.'
-      },
+  TrainersList:[
+  {
+    image: 'trainer1-400x297.jpg',
+    id: '1',
+    name: 'Ann Baker',
+    position: 'Personal Trainer',
+    about: 'My name is Ann and I am a personal trainer in Avada Gym. AG is a results-based training community committed to helping you achieve your specific fitness goals.'
+  },
+  {
+    image: 'trainer3-400x297.jpg',
+    id: '2',
+    name: 'Anne Warren',
+    position: 'Personal Trainer',
+    about: 'We believe everyone should live their life in the body they desire, if they are willing to work for it. So we provide everything you need to do that'
+  },
+  {
+    image: 'trainer4-400x297.jpg',
+    id: '3',
+    name: 'Peter Rice',
+    position: 'Personal Trainer',
+    about: 'I am dedicated to constantly improving my life through health and fitness and changing other people\'s lives through health and fitness.'
+  },
      ]
    }
  }
@@ -130,13 +134,16 @@ export default {
       cursor: pointer;
       text-align: center;
       margin-bottom:30px;
+      &:hover{
+        animation: shake 1s;}
+        box-shadow: 0 0 20px #141414;
       .image{
         height: 215px;
-        &:hover ~.hidden-part{
-          height:320px;
-          cursor:pointer;
-          transition: all 1s ease;
-        }
+        // &:hover ~.hidden-part{
+        //   height:320px;
+        //   cursor:pointer;
+        //   transition: all 1s ease;
+        // }
         img{
         position: absolute;
         top: 100px;
@@ -149,7 +156,7 @@ export default {
       }
       .hidden-part{
         width: 100%;
-        height: 0;
+        height: 320px;
         text-align:left;
         color: $white;
         background-color: $primaryShark-color;
@@ -173,6 +180,19 @@ export default {
       }
     }
   }
+  @keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
  }
 
 </style>
