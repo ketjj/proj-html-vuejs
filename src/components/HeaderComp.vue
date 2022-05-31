@@ -10,12 +10,21 @@
         <ul>
           <li v-for="(navlink,index) in NavLinkList" :key="index"><a :href="navlink.id" :class="{'active': navlink.isSelected}">{{navlink.name}}</a></li>
         </ul>
-        <a href="#">
-         <i class="fa-solid fa-bars" id="ham-menu"></i>
-        </a>
-      <!-- HAMBURGER MENU STARTS HERE-->
+        <!-- HAMBURGER MENU STARTS HERE-->
+
+    </div>
+    <div class="hamburger" @click="isShown = !isShown">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+
     </div>
   </div>
+    <ul v-if="isShown" class="hamburger-menu" :class="{'open' : isShown}">
+      <li v-for="(navlink,index) in NavLinkList" :key="index"><a :href="navlink.id" :class="{'active': navlink.isSelected}">{{navlink.name}}</a></li>
+    </ul>
+
+
     
 
 
@@ -47,6 +56,7 @@ export default {
  data(){
    return{
      NavLinkList: NavLinkList,
+     isShown: false
    }
  }
 }
