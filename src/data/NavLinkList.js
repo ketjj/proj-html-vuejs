@@ -2,34 +2,34 @@ export default [
   
   {
     name: 'home',
-    select: true,
+    isSelected: true,
     dropdown: ''
   },
   {
     name: 'about us',
-    select: false,
+    isSelected: false,
     dropdown: ''
   },
   {
     name: 'facilities',
     id: '#facilities',
-    select: true,
+    isSelected: false,
     dropdown: ''
   },
   {
     name: 'membership',
-    select: true,
+    isSelected: false,
     dropdown: ''
   },
   {
     name: 'testimonials',
     id: '#testimonials',
-    select: true,
+    isSelected: false,
     dropdown: ''
   },
   {
     name: 'blog',
-    select: true,
+    isSelected: false,
     dropdown: ''
   }
 ]

@@ -5,6 +5,7 @@
         
         <div v-for="(benefit,index) in BenefitsList" :key="index" class="col text-center">
           <i :class="`fa-solid ${benefit.icon}`"></i> 
+    
           <h6>{{benefit.title}}</h6>
           <img src="../assets/img/divider-x-red.png" :alt="benefit.title">
           <p>{{benefit.description}}</p>
@@ -45,10 +46,21 @@ export default {
   .col{
     max-height: 300px;
     margin: 40px 0;
+    transition:2.5s;
   }
   i:hover{
     cursor: pointer;
-    transform: scale(1.2);  
+    //transform: scale(1.2);
+    //transform: scale(1) rotate(180deg)
+    animation: rotation 2s linear;
+    @keyframes rotation {
+    from {
+    transform: rotateY(0deg);
+    }
+     to {
+    transform: rotateY(359deg);
+    }
+    }
   } 
   }
 

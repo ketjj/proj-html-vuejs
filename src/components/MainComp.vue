@@ -18,23 +18,22 @@
 
     <div class="lower">
       <div class="k_container text-center container-fluid">
-        <div class="d-flex">
+        <div class="row">
 
           <!-- IMAGE SIDE -->
 
-          <div class="col-image">
+          <div class="col-12 col-md-6 col-image">
             <img src="../assets/img/home_img-compressor-400x222.jpg" alt="">
           </div>
 
           <!-- FORM SIDE -->
-          <div class="submit">
+          <div class="col-12 col-md-6 submit">
             <SignUpComp/>
           </div>         
         </div>     
       </div>
     </div>
   
-
       <!-- SECTION BENEFITS -->
     <SectionBenefits/>
     
@@ -49,15 +48,16 @@
     <!-- SECTION ARTICLES -->
     <SectionArticles/>
 
+
   </div>
 </template>
 
 <script>
-import SignUpComp from '@/components/SignUpComp'
-import SectionBenefits from '@/components/SectionBenefits'
-import SectionResultsFacility from '@/components/SectionResultsFacility'
-import SectionTrainers from '@/components/SectionTrainers'
-import SectionArticles from '@/components/SectionArticles'
+import SignUpComp from '../components/SignUpComp'
+import SectionBenefits from '../components/SectionBenefits'
+import SectionResultsFacility from '../components/SectionResultsFacility'
+import SectionTrainers from '../components/SectionTrainers'
+import SectionArticles from '../components/SectionArticles'
 
 
 export default {
@@ -67,14 +67,11 @@ export default {
    SectionBenefits,
    SectionResultsFacility,
    SectionTrainers,
-   SectionArticles
+   SectionArticles,
+   
   }
-
 }
 </script>
-
-
-
 
 <style lang="scss" scoped>
 @import '../assets/style/vars';
@@ -106,25 +103,18 @@ export default {
   }
 }
 
-
 // LOWER
 .lower{
-  height:520px;
+  min-height:520px;
   background-color: $secondaryShark-color;
   padding: 90px 0 50px 0;
   .col-image{
-    flex-basis:50%;
     padding:15px;
     img{
       width:100%;
     }
   }
-  .submit{
-    flex-basis:50%;
-  }
+
 }
-
-
-// BENEFITS
 
 </style>

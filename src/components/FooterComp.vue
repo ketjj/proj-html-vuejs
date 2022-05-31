@@ -60,7 +60,7 @@
         <div class="underlower-footer">
           <div class="k_container d-flex justify-content-between h-100">
             <div class="copyright align-self-center"><i class='far fa-copyright'></i>Copyright 2012-2020 | Avada Theme By Theme Fusion | All  Rights Reserved | Powered By Wordpress</div>
-            <div class=" align-self-center"> <SocialIcons :red="true"/></div>
+            <div class="icons align-self-center"> <SocialIcons :red="true"/></div>
           </div>
         </div>
     </div>
@@ -173,6 +173,10 @@ ul li{
   font-size: 14px;
   line-height: 25px;
   color: $edward-light;
+  &:hover{
+    color: lighten($edward-light, 50%);
+    cursor: pointer;
+  }
 }
 .posts li{
   width:100%;
@@ -196,5 +200,31 @@ ul li{
     margin-right: 10px;
   }
 }
+.col img{
+  text-align:center;
+  &:hover{
+    animation: rotation 2s linear;
+    @keyframes rotation {
+    from {
+    transform: rotateY(0deg);
+    }
+     to {
+    transform: rotateY(359deg);
+    }
+    }
+    box-shadow: 0 0 20px #141414;
 
+  }
+
+
+}
+  @media (max-width: 950px) {
+    .icons{
+      padding:2px 5px;
+    }
+    .copyright{
+      display:none!important;
+    }
+ 
+  }
 </style>

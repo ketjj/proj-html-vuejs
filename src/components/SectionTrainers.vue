@@ -31,7 +31,7 @@
              <img :src="require(`../assets/img/${trainer.image}`)" :alt="trainer.name">
           </div>
           <div class="hidden-part">
-            <div class="info d-flex flex-column justify-content-between">
+            <div class="info d-flex flex-column justify-content-between w-100">
               <div class="name">{{trainer.name}}
               <div>{{trainer.position}}</div>
               </div>
@@ -139,6 +139,7 @@ export default {
       &:hover{
         animation: shake 1s;}
         box-shadow: 0 0 20px #141414;
+        cursor: crosshair;
       .image{
         height: 215px;
         // &:hover ~.hidden-part{

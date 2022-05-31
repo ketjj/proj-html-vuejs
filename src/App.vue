@@ -71,7 +71,6 @@ export default {
   padding: 12px 15px;
   background-color: $oslo-gray;
   border-radius: 50%;
-  box-shadow: 0 0 10px $chestNut-lighterred;
   &:hover{
     background-color:white;
     cursor: pointer;

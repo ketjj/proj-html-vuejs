@@ -1,5 +1,6 @@
 <template>
   <div class="total text-center">
+
     <!-- TESTIMONIALS -->
 
     <div id="testimonials" class="k_container">
@@ -16,10 +17,12 @@
             <p class="author">- {{feedback.author}}</p>
           </div>
         </div>
-      </div>      
+      </div>
+
     </div>
 
     <!-- FACILITIESd -->
+
     <div id="facilities" class="k_container">
       <div id="title">
         <div class="section-title">Hight performance facilities</div>
@@ -52,8 +55,8 @@
 </template>
 
 <script>
-import FeedbackList from '@/data/FeedbackList'
-import FacilitiesList from '@/data/FacilitiesList'
+import FeedbackList from '../data/FeedbackList'
+import FacilitiesList from '../data/FacilitiesList'
 
 export default {
  name: 'SectionResultsFacility',
@@ -94,6 +97,7 @@ export default {
   }
   .results{
     min-height: 420px;
+    
     .result-wrap{
       padding:20px;
       display: flex;
@@ -102,6 +106,12 @@ export default {
         height: 100%;
         background-color: $secondaryShark-color;
         padding: 20px;
+        &:hover{
+         transform: scale(1.1);
+         cursor: crosshair;
+         background-color: lighten($secondaryShark-color, 10%);
+        }
+
         img{
         height: 100%;
         float:left;
@@ -129,6 +139,7 @@ export default {
     &:hover{
       transform: scale(1.5);
       transform: translate(0, 20px);
+      cursor: crosshair;
     }
     img{
     width:100%;
@@ -142,6 +153,7 @@ export default {
         filter: brightness(200%);
         cursor: pointer;
         transition: all .5s ease-in-out;
+        cursor: crosshair;
       }
 
     }

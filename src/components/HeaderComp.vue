@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import NavLinkList from '@/data/NavLinkList';
-import ButtonComp from '@/components/ButtonComp'
+import NavLinkList from '../data/NavLinkList';
+import ButtonComp from '../components/ButtonComp'
 
 
 export default {
