@@ -18,37 +18,35 @@
 
     <div class="k_container lower-footer">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-        <div class="col">
-          <div class="title">Come find us</div>
+
+        <div
+         class="col">
+          <div class="title">{{info.title}}</div>
           <ul>
-            <li>12345 North Main Street</li>
-            <li>New York, NY 55555</li>
-            <li>Phone: 1.800.555.6789</li>
-            <li>Email: info@your-domain.com</li>
+            <li>{{info.address}}</li>
+            <li>{{info.city}}</li>
+            <li>Phone: {{info.phone}}</li>
+            <li>E-mail: {{info.Email}}</li>
           </ul>
         </div>
 
         <div class="col posts">
-          <div class="title">Recent Posts</div>
-          <ul>
-            <li><i class="fa-solid fa-chevron-right"></i>Train with free weights or your body weight?</li>
-            <li><i class="fa-solid fa-chevron-right"></i>Nutritional advice that will keep you training</li>
+          <div class="title">{{posts.title}}</div>
+          <ul v-for="(post,i) in posts.recentpost" :key="`post-${i}`" >
+            <li><i class="fa-solid fa-chevron-right"></i>
+            {{post}}</li>
+
           </ul>
         </div>
 
         
         <div class="col opening">
-          <div class="title">Opening Times</div>
-          <ul>
-            <li>
-              <div class="days">Weekdays Monday - Friday</div>
-              <div class="hours">09:00 - 19:00</div>
-            </li>
-            <li>
-              <div>Weekdays Saturday - Sunday</div>
-              <div class="hours" >09:00 - 21:00</div>
-            </li>
-            
+          <div class="title">{{workingTime.title}}</div>
+          <ul v-for="(workdays, i) in workingTime" :key="`workT-${i}`">
+            <li v-for="(day, index) in workdays" :key="`workdt-${index}`">
+              <div class="days">{{day.days}}</div>
+              <div class="hours">{{day.hours}}</div>
+            </li>           
           </ul>
         </div>
 
@@ -73,14 +71,53 @@
 <script>
 import ButtonComp from '@/components/ButtonComp'
 import SocialIcons from '@/components/SocialIcons'
+import FooterList from '@/data/FooterList'
 
 export default {
  name: 'FooterComp',
  components:{
    ButtonComp,
    SocialIcons
- }
+ },
+  data(){
+   return{
+    FooterList: FooterList,
+
+    info:{
+      title: 'Come find us',
+      address: '12345 North Main Street',
+      city: 'New York, NY 55555',
+      phone: '1.800.555.6789',
+      Email: 'info@your-domain.com'
+    },
+
+    posts:{      
+      title: 'Recent Posts',
+      recentpost: [
+        'Train with free weights or your body weight?', 
+        'Nutritional advice that will keep you training'
+      ]
+    },
+
+    workingTime: {        
+      title: 'Opening Times',
+      workingDays: [
+        {
+          days: 'Weekdays Monday - Friday',
+          hours: '09:00 - 19:00',
+        },
+        {
+          days: 'Weekdends Saturday - Sunday',
+          hours: '09:00 - 21:00',
+        }
+      ]
+    }
+    }         
+  }
 }
+
+  
+
 </script>
 
 <style lang="scss" scoped>
