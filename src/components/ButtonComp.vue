@@ -1,16 +1,27 @@
 <template>
-  <div class="button2">
+  <div :class="[light ? 'light' : '', 'basebutton']">
   <span></span>
   <span></span>
   <span></span>
   <span></span>
-  Join us today
+  {{buttonText}}
 </div>
 </template>
 
 <script>
 export default {
-  name: 'ButtonComp'
+  name: 'ButtonComp',
+  props: {
+    buttonText:{
+      type: String,
+      default: () => "Label"
+    },
+    light:{
+      type: Boolean,
+      default: () => false
+    },
+
+  }
 
 }
 </script>
@@ -18,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/vars';
 
-.button2 {
+.basebutton {
   position: relative;
   display: inline-block;
   padding: 10px 30px;
@@ -34,7 +45,7 @@ export default {
   //background-color: rgba($doveGray-dark, .5);
   cursor: crosshair;
   &:hover {
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     background-color: rgba($doveGray-dark, .3);
     color:white;
     span {
@@ -125,5 +136,30 @@ export default {
   }
 }
 
+.light{
+  color: $thatch-brown;
+  border: 2px solid  $thatch-brown;
+  &:hover{
+    background-color: rgba($thatch-brown, .5);
+    color:$irishCoffee;
+    font-weight:600;
+      span {
+      position: absolute;
+      display: block;
+      &:nth-child(1) {
+        background: linear-gradient(90deg, transparent, #ffffff);       
+      }
+      &:nth-child(2) {
+        background: linear-gradient(180deg, transparent, #ffffff);       
+      }
+      &:nth-child(3) {
+        background: linear-gradient(270deg, transparent, #ffffff);       
+      }
+      &:nth-child(4) {
+        background: linear-gradient(360deg, transparent, #ffffff);       
+      }
+  }
+}
+}
 
 </style>

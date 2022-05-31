@@ -6,13 +6,18 @@
     </div>
 
     <div class="nav">
-      <ul>
-        <li v-for="(navlink,index) in NavLinkList" :key="index"><a :href="navlink.id" class="">{{navlink.name}}</a></li>
-        <!-- :class="{'active': navlin.isActive}" -->
-      </ul>
-      <i class="fa-solid fa-bars"></i>
+
+        <ul>
+          <li v-for="(navlink,index) in NavLinkList" :key="index"><a :href="navlink.id" :class="{'active': navlink.isSelected}">{{navlink.name}}</a></li>
+        </ul>
+        <a href="#">
+         <i class="fa-solid fa-bars" id="ham-menu"></i>
+        </a>
+      <!-- HAMBURGER MENU STARTS HERE-->
     </div>
   </div>
+    
+
 
   <div class="jumbo">
     <!-- <img src="../assets/img/home-banner.jpg" alt=""> -->
@@ -20,7 +25,8 @@
     <div class="banner-text pb-2">No pain no gain</div>
     <h6>Motivation is what gets you started. Habit is what keeps you going</h6>
     <div class="text-center">
-      <ButtonComp/>
+      <ButtonComp buttonText="Join us today!"/>
+      
     </div>
     </div>
   </div>
@@ -40,7 +46,7 @@ export default {
  components:{ ButtonComp },
  data(){
    return{
-     NavLinkList: NavLinkList
+     NavLinkList: NavLinkList,
    }
  }
 }
@@ -78,6 +84,10 @@ h6{
   margin-bottom: 40px;
   font-family: 'Saira', sans-serif;
   word-spacing: 2px;
+}
+li.active{
+  background-color: $oslo-gray;
+   color:black;
 }
 
 </style>

@@ -22,7 +22,12 @@
 
         </div>
 
-        <button type="submit" @click="handleSubmit()" class="btn btn-primary k_button">Start now!</button>
+        <ButtonREDComp
+        type="submit" @click="handleSubmit()"
+        @keyup.enter="handleSubmit()"
+        class="btn btn-primary k_button"
+        buttonText ="Start now!"
+        />
 
         <!-- @click="handleSubmit()" @keyup.enter="makeSubscription" -->
 
@@ -35,8 +40,12 @@
 </template>
 
 <script>
+import ButtonREDComp from '@/components/ButtonREDComp'
 export default {
   name: 'SignUpComp',
+  components:{
+    ButtonREDComp
+  },
 
    data(){
     return{
@@ -130,9 +139,6 @@ export default {
     float:left;
     text-transform:uppercase;
     margin-top: 15px;
-    background-color:$chestNut-darkred;
-    border-color:$chestNut-darkred;
-    padding: 10px 0;
   }
 
   }

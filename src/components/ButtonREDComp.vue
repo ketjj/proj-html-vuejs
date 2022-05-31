@@ -1,16 +1,22 @@
 <template>
-  <div class="button2">
+  <div class="basebutton">
   <span></span>
   <span></span>
   <span></span>
   <span></span>
-  Read all articles
+  {{buttonText}}
 </div>
 </template>
 
 <script>
 export default {
-  name: 'ButtonComp'
+  name: 'ButtonComp',
+  props: {
+    buttonText:{
+      type: String,
+      default: () => "Label"
+    }
+  }
 
 }
 </script>
@@ -18,25 +24,24 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/vars';
 
-.button2 {
+.basebutton {
+  color:white;
   position: relative;
   display: inline-block;
   padding: 10px 30px;
   border-radius: 4px;
-  color: $doveGray-dark;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  margin: 10px 25px;
   filter: hue-rotate(0deg);
-  border: 2px solid  $doveGray-dark;
+  border: 2px solid  $chestNut-darkred;
   transition: all 0.1s linear;
-  //background-color: rgba($doveGray-dark, .5);
+  background-color:$chestNut-darkred;
   cursor: crosshair;
   &:hover {
-    border: 1px solid transparent;
-    background-color: rgba($doveGray-dark, .3);
-    color:white;
+    border: 2px solid transparent;
+    background-color: lighten($chestNut-darkred, 5%);
+    color: white;
     span {
       position: absolute;
       display: block;
@@ -46,7 +51,7 @@ export default {
         left: 0;
         width: 100%;
         height: 3px;
-        background: linear-gradient(90deg, transparent, #3a86ff);
+        background: linear-gradient(90deg, transparent, $irishCoffee);
         animation: animate1 1s linear infinite;
         
       }
@@ -66,7 +71,7 @@ export default {
         right: 0;
         width: 3px;
         height: 100%;
-        background: linear-gradient(180deg, transparent, #3a86ff);
+        background: linear-gradient(180deg, transparent, $irishCoffee);
         animation: animate2 1s linear infinite;
         animation-delay: 0.25s;
       }
@@ -86,7 +91,7 @@ export default {
         right: 0;
         width: 100%;
 
-        background: linear-gradient(270deg, transparent, #3a86ff);
+        background: linear-gradient(270deg, transparent, $irishCoffee);
         animation: animate3 1s linear infinite;
         animation-delay: 0.5s;
       }
@@ -108,7 +113,7 @@ export default {
         left: 0;
         width: 3px;
         height: 100%;
-        background: linear-gradient(360deg, transparent, #3a86ff);
+        background: linear-gradient(360deg, transparent, $irishCoffee);
         animation: animate4 1s linear infinite;
         animation-delay: 0.75s;
       }

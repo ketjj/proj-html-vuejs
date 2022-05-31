@@ -6,20 +6,20 @@
         <img src="../assets/img/divider-xx-red.png" alt="">
       </div>
 
-      <div class="main-articles">
+      <div class="main-articles container">
         <CardArticles 
         v-for="(article,index) in articles" :key="`art-${index}`"
         :articleOb="article"/>
       </div>
 
-      <div v-if="isVisible" class="main-articles">
+      <div v-if="isVisible" class="main-articles container">
         <CardArticles 
         v-for="(article,index) in PerformanceNewsList" :key="`per-${index}`"
         :articleOb="article"/>
       </div>
 
       <div @click="isVisible = !isVisible" class="button">
-        <ButtonCompArticle/>
+        <ButtonComp buttonText="Read all articles"/>
       </div>
 
     </div>
@@ -29,13 +29,13 @@
 <script>
 import CardArticles from '@/components/CardArticles'
 import PerformanceNewsList from '@/data/PerformanceNewsList'
-import ButtonCompArticle from '@/components/ButtonCompArticle'
+import ButtonComp from '@/components/ButtonComp'
 
 export default {
  name: 'SectionArticles',
  components:{
    CardArticles,
-   ButtonCompArticle
+   ButtonComp
  },
  data(){
    return{
@@ -103,15 +103,24 @@ export default {
   .main-articles{
     width:100%;
     max-height: 1000px;
-    margin-bottom:100px;
+    margin-bottom:40px;
     display: flex;
     flex-direction: column;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
     justify-content: space-between;
   }
   .button{
     text-align:center;
     margin:0 auto;
+    padding-bottom:130px;
   }
  }
+ @media (max-width: 768px) {
+     .main-articles{
+      height: 570px;
+     }
+ }
+
 </style>

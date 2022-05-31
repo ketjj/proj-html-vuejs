@@ -44,22 +44,24 @@
       </div>
 
       <div @click="isVisible = !isVisible" class="button">
-        <ButtonCompCopy/>
+        <ButtonComp buttonText="View all trainers"/>
       </div>
+
     </div>
+      <img class="line" src="../assets/img/background-linedark.png" alt="">
   </div>
 </template>
 
 <script>
 import SocialIcons from '@/components/SocialIcons'
-import ButtonCompCopy from '@/components/ButtonCompCopy'
+import ButtonComp from '@/components/ButtonComp'
 import MoreTrainersList from '@/data/MoreTrainersList'
 
 export default {
  name: 'SectionTrainers',
  components:{
    SocialIcons,
-   ButtonCompCopy
+   ButtonComp
  },
  methods:{
  
@@ -124,7 +126,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     transition: all 1s;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 
     .trainer-card{
       width: 32%;
@@ -177,8 +179,13 @@ export default {
       .button{
         text-align:center;
         margin:0 auto;
+        
       }
     }
+  }
+  .line{
+    background-color: $primaryShark-color;
+    width:100%;
   }
   @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -192,7 +199,25 @@ export default {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
+  }
  }
+
+@media (max-width: 768px) {
+  .trainers{
+    min-height: 0px;
+  }
+
+  .trainer-card{
+    height: 300px;
+    text-align:center;
+  }
+  .info{
+    justify-content: start;
+  }
+  .info p,
+  .name div{
+    display:none;
+  }
+}
 
 </style>
