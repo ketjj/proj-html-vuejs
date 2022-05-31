@@ -2,11 +2,13 @@ export default [
   
   {
     name: 'home',
+    id: '',
     isSelected: true,
     dropdown: ''
   },
   {
     name: 'about us',
+    id: '',
     isSelected: false,
     dropdown: ''
   },
@@ -18,6 +20,7 @@ export default [
   },
   {
     name: 'membership',
+    id:'#trainers',
     isSelected: false,
     dropdown: ''
   },
@@ -29,6 +32,7 @@ export default [
   },
   {
     name: 'blog',
+    id: '#articles',
     isSelected: false,
     dropdown: ''
   }

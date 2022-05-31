@@ -1,5 +1,5 @@
 <template>
-  <div class="trainers">
+  <div id="trainers">
     <div class="k_container text-center">
       <div id="title">
         <div class="section-title">Meet our trainers</div>
@@ -103,7 +103,7 @@ export default {
 <style lang="scss" scoped>
  @import '../assets/style/vars';
 
- .trainers{
+ #trainers{
     background-color: $secondaryShark-color;
     min-height:980px;
     #title {

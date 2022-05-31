@@ -2,7 +2,7 @@
   <div id="articles">
     <div class="k_container">
       <div id="title">
-        <div class="section-title">Meet our trainers</div>
+        <div class="section-title">Performance News</div>
         <img src="../assets/img/divider-xx-red.png" alt="">
       </div>
 
